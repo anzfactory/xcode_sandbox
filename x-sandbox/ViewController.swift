@@ -10,14 +10,14 @@ import UIKit
 class ViewController: UIViewController {
     
     private let safariIcon: UIImageView = {
-        let view = UIImageView(image: Asset.Icon.safariOutline.image.withRenderingMode(.alwaysTemplate))
+        let view = UIImageView(image: Asset.Icons.safariOutline.image.withRenderingMode(.alwaysTemplate))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.tintColor = .systemGray
         return view
     }()
     
     private let xmarkIcon: UIImageView = {
-        let view = UIImageView(image: Asset.Icon.xmarkCircle.image.withRenderingMode(.alwaysTemplate))
+        let view = UIImageView(image: Asset.Icons.xmarkCircle.image.withRenderingMode(.alwaysTemplate))
         view.translatesAutoresizingMaskIntoConstraints = false
         view.tintColor = .systemPink
         return view

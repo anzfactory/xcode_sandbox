@@ -6,3 +6,5 @@ xcassets:
       params:
         forceProvidesNamespaces: true
       output: x-sandbox/Assets.swift
+    - templatePath: swiftgen_template.stencil
+      output: x-sandboxTests/AssetTests.swift

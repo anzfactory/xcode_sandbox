@@ -1,0 +1,24 @@
+//
+//  Generated using SwiftGen — https://github.com/SwiftGen/SwiftGen
+//
+{% macro allValuesBlock assets prefix %}
+  {% for asset in assets %}
+    {% if asset.items %}
+      {% set newPrefix %}{{prefix}}{{asset.name|swiftIdentifier:"pretty"|escapeReservedKeywords}}.{% endset %}
+      {% call allValuesBlock asset.items newPrefix %}
+    {% elif asset.type != "group" %}
+      _ = Asset.{{prefix}}{{asset.name|swiftIdentifier:"pretty"|lowerFirstWord}}.{{asset.type}}
+    {% endif %}
+  {% endfor %}
+{% endmacro %}
+import XCTest
+
+@testable import x_sandbox
+
+class AssetTests: XCTestCase {
+    func testAssetsAreAvailable() throws {
+        {% for catalog in catalogs %}
+        {% call allValuesBlock catalog.assets "" %}
+        {% endfor %}
+    }
+}

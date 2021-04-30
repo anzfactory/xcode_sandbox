@@ -15,7 +15,18 @@
 		776B3F9C263B97D10038EEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776B3F9B263B97D10038EEE8 /* Assets.xcassets */; };
 		776B3F9F263B97D10038EEE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776B3F9D263B97D10038EEE8 /* LaunchScreen.storyboard */; };
 		77D5FF17263B9F4D00A2C150 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D5FF16263B9F4D00A2C150 /* Assets.swift */; };
+		77F9FACC263C09AC00083865 /* AssetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77F9FACB263C09AB00083865 /* AssetTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		77F9FAC6263C072900083865 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 776B3F87263B97CD0038EEE8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 776B3F8E263B97CD0038EEE8;
+			remoteInfo = "x-sandbox";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		19EADA5C4BB920C262B95520 /* Pods-x-sandbox.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-x-sandbox.release.xcconfig"; path = "Target Support Files/Pods-x-sandbox/Pods-x-sandbox.release.xcconfig"; sourceTree = "<group>"; };
@@ -30,6 +41,9 @@
 		776B3F9E263B97D10038EEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		776B3FA0263B97D10038EEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		77D5FF16263B9F4D00A2C150 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		77F9FAC1263C072900083865 /* x-sandboxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "x-sandboxTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		77F9FAC5263C072900083865 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77F9FACB263C09AB00083865 /* AssetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77F9FABE263C072900083865 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -48,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				776B3F91263B97CD0038EEE8 /* x-sandbox */,
+				77F9FAC2263C072900083865 /* x-sandboxTests */,
 				776B3F90263B97CD0038EEE8 /* Products */,
 				92C12D9617D053166F2F95CF /* Pods */,
 				FA711ED7E99F0B6263BFC6C9 /* Frameworks */,
@@ -58,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				776B3F8F263B97CD0038EEE8 /* x-sandbox.app */,
+				77F9FAC1263C072900083865 /* x-sandboxTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -75,6 +98,15 @@
 				776B3FA0263B97D10038EEE8 /* Info.plist */,
 			);
 			path = "x-sandbox";
+			sourceTree = "<group>";
+		};
+		77F9FAC2263C072900083865 /* x-sandboxTests */ = {
+			isa = PBXGroup;
+			children = (
+				77F9FACB263C09AB00083865 /* AssetTests.swift */,
+				77F9FAC5263C072900083865 /* Info.plist */,
+			);
+			path = "x-sandboxTests";
 			sourceTree = "<group>";
 		};
 		92C12D9617D053166F2F95CF /* Pods */ = {
@@ -116,6 +148,24 @@
 			productReference = 776B3F8F263B97CD0038EEE8 /* x-sandbox.app */;
 			productType = "com.apple.product-type.application";
 		};
+		77F9FAC0263C072900083865 /* x-sandboxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77F9FACA263C072900083865 /* Build configuration list for PBXNativeTarget "x-sandboxTests" */;
+			buildPhases = (
+				77F9FABD263C072900083865 /* Sources */,
+				77F9FABE263C072900083865 /* Frameworks */,
+				77F9FABF263C072900083865 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				77F9FAC7263C072900083865 /* PBXTargetDependency */,
+			);
+			name = "x-sandboxTests";
+			productName = "x-sandboxTests";
+			productReference = 77F9FAC1263C072900083865 /* x-sandboxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -127,6 +177,10 @@
 				TargetAttributes = {
 					776B3F8E263B97CD0038EEE8 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					77F9FAC0263C072900083865 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 776B3F8E263B97CD0038EEE8;
 					};
 				};
 			};
@@ -144,6 +198,7 @@
 			projectRoot = "";
 			targets = (
 				776B3F8E263B97CD0038EEE8 /* x-sandbox */,
+				77F9FAC0263C072900083865 /* x-sandboxTests */,
 			);
 		};
 /* End PBXProject section */
@@ -156,6 +211,13 @@
 				776B3F9F263B97D10038EEE8 /* LaunchScreen.storyboard in Resources */,
 				776B3F9C263B97D10038EEE8 /* Assets.xcassets in Resources */,
 				776B3F9A263B97CD0038EEE8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77F9FABF263C072900083865 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +278,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77F9FABD263C072900083865 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				77F9FACC263C09AC00083865 /* AssetTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		77F9FAC7263C072900083865 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 776B3F8E263B97CD0038EEE8 /* x-sandbox */;
+			targetProxy = 77F9FAC6263C072900083865 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		776B3F98263B97CD0038EEE8 /* Main.storyboard */ = {
@@ -394,6 +472,46 @@
 			};
 			name = Release;
 		};
+		77F9FAC8263C072900083865 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "x-sandboxTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.anzfactory.x-sandboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/x-sandbox.app/x-sandbox";
+			};
+			name = Debug;
+		};
+		77F9FAC9263C072900083865 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "x-sandboxTests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "xyz.anzfactory.x-sandboxTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/x-sandbox.app/x-sandbox";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -411,6 +529,15 @@
 			buildConfigurations = (
 				776B3FA4263B97D10038EEE8 /* Debug */,
 				776B3FA5263B97D10038EEE8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		77F9FACA263C072900083865 /* Build configuration list for PBXNativeTarget "x-sandboxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77F9FAC8263C072900083865 /* Debug */,
+				77F9FAC9263C072900083865 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
