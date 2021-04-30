@@ -6,5 +6,5 @@ target 'x-sandbox' do
   use_frameworks!
 
   # Pods for x-sandbox
-
+  pod 'SwiftGen'
 end

@@ -14,6 +14,7 @@
 		776B3F9A263B97CD0038EEE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776B3F98263B97CD0038EEE8 /* Main.storyboard */; };
 		776B3F9C263B97D10038EEE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 776B3F9B263B97D10038EEE8 /* Assets.xcassets */; };
 		776B3F9F263B97D10038EEE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 776B3F9D263B97D10038EEE8 /* LaunchScreen.storyboard */; };
+		77D5FF17263B9F4D00A2C150 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D5FF16263B9F4D00A2C150 /* Assets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		776B3F9B263B97D10038EEE8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		776B3F9E263B97D10038EEE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		776B3FA0263B97D10038EEE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77D5FF16263B9F4D00A2C150 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		776B3F91263B97CD0038EEE8 /* x-sandbox */ = {
 			isa = PBXGroup;
 			children = (
+				77D5FF16263B9F4D00A2C150 /* Assets.swift */,
 				776B3F92263B97CD0038EEE8 /* AppDelegate.swift */,
 				776B3F94263B97CD0038EEE8 /* SceneDelegate.swift */,
 				776B3F96263B97CD0038EEE8 /* ViewController.swift */,
@@ -80,7 +83,6 @@
 				526D3218AE60A590845881D1 /* Pods-x-sandbox.debug.xcconfig */,
 				19EADA5C4BB920C262B95520 /* Pods-x-sandbox.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +105,7 @@
 				776B3F8B263B97CD0038EEE8 /* Sources */,
 				776B3F8C263B97CD0038EEE8 /* Frameworks */,
 				776B3F8D263B97CD0038EEE8 /* Resources */,
+				77D5FF18263BA36700A2C150 /* Run SwiftGen */,
 			);
 			buildRules = (
 			);
@@ -159,6 +162,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		77D5FF18263BA36700A2C150 /* Run SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftGen";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ -f \"${PODS_ROOT}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PODS_ROOT}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
 		EDAEC7142B43F087939CB5AB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,6 +211,7 @@
 			files = (
 				776B3F97263B97CD0038EEE8 /* ViewController.swift in Sources */,
 				776B3F93263B97CD0038EEE8 /* AppDelegate.swift in Sources */,
+				77D5FF17263B9F4D00A2C150 /* Assets.swift in Sources */,
 				776B3F95263B97CD0038EEE8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
