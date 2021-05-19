@@ -15,15 +15,23 @@ class ViewController: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private let heartView: HeartView = {
+        let view = HeartView(frame: .init(origin: .zero, size: .init(width: 100, height: 100)))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(targetView)
+        let subview = heartView // targetView
+        view.addSubview(subview)
+        
         NSLayoutConstraint.activate([
-            targetView.widthAnchor.constraint(equalToConstant: targetView.frame.width),
-            targetView.heightAnchor.constraint(equalToConstant: targetView.frame.height),
-            targetView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            targetView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
+            subview.widthAnchor.constraint(equalToConstant: subview.frame.width),
+            subview.heightAnchor.constraint(equalToConstant: subview.frame.height),
+            subview.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            subview.centerYAnchor.constraint(equalTo: view.centerYAnchor)
         ])
     }
     
@@ -32,7 +40,8 @@ class ViewController: UIViewController {
         
 //        animateTypeA()
 //        animateTypeB()
-        animateTypeC()
+//        animateTypeC()
+        animateHeart()
     }
 }
 
@@ -124,5 +133,63 @@ private extension ViewController {
         animation.isRemovedOnCompletion = false
         animation.timingFunction = .init(name: .linear)
         targetView.layer.add(animation, forKey: "animation")
+    }
+    
+    func animateHeart() {
+        let fillColorAnimation = CABasicAnimation(keyPath: "fillColor")
+        fillColorAnimation.duration = 1.5;
+        fillColorAnimation.toValue = UIColor.systemPink.cgColor
+        fillColorAnimation.fillMode = .forwards
+        fillColorAnimation.isRemovedOnCompletion = false
+        fillColorAnimation.timingFunction = .init(name: .easeInEaseOut)
+        heartView.layer.sublayers?.first?.add(fillColorAnimation, forKey: "fillColorAnimation")
+    }
+}
+
+class HeartView: UIView {
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupHeart()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupHeart() {
+        
+        let bezierPath = UIBezierPath()
+        
+        let bottomCenter = CGPoint(x: bounds.width * 0.5, y: bounds.height * 0.9)
+        let topCenter = CGPoint(x: bounds.width * 0.5, y: bounds.height * 0.22)
+        // leftSideControl / leftTopControl を調整することでハートの形状がかわる
+        // right 系は left を反転させてるだけなので直接はいじらなくていい
+        let leftSideControl = CGPoint(x: -(bounds.width * 0.42), y: (bounds.height * 0.48))
+        let leftTopControl = CGPoint(x: (bounds.width * 0.25), y: -(bounds.height * 0.18))
+        let rightTopControl = CGPoint(x: bounds.width - leftTopControl.x, y: leftTopControl.y)
+        let rightSideControl = CGPoint(x: bounds.width + (leftSideControl.x * -1), y: leftSideControl.y)
+        
+        bezierPath.move(to: bottomCenter)
+        bezierPath.addCurve(to: topCenter,
+                      controlPoint1: leftSideControl,
+                      controlPoint2: leftTopControl)
+        bezierPath.addCurve(to: bottomCenter,
+                      controlPoint1: rightTopControl,
+                      controlPoint2: rightSideControl)
+        bezierPath.close()
+        
+        let layer = CAShapeLayer()
+        layer.path = bezierPath.cgPath
+        layer.lineWidth = 6.0
+        layer.fillColor = UIColor.clear.cgColor
+        layer.strokeColor = UIColor.systemPink.cgColor
+        self.layer.addSublayer(layer)
+    }
+}
+
+private extension UIBezierPath {
+    func buildHeartPath(rect: CGRect) {
+        
+        
     }
 }
