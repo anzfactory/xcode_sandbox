@@ -80,7 +80,6 @@
 				526D3218AE60A590845881D1 /* Pods-x-sandbox.debug.xcconfig */,
 				19EADA5C4BB920C262B95520 /* Pods-x-sandbox.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
